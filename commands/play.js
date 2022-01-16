@@ -9,12 +9,12 @@ module.exports = {
         .setDescription('Joins and Play a video from yt')
         .addStringOption(option => option.setName('link').setDescription('URL, query')),
     async execute(client, interaction){
-        const channel = await client.channels.fetch(interaction.channelId);
+        const channel = await client.channels.fetch("884404283175473163");
         // console.log(channel.guild);
         
         const connection = joinVoiceChannel({
-            channelId: channel.id,
-            guildId: channel.guild.id,
+            channelId: "884404283175473163",
+            guildId: '824969885263331358',
             adapterCreator: channel.guild.voiceAdapterCreator,
         });
         await interaction.reply('fuck you');
