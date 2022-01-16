@@ -1,4 +1,5 @@
 const {SlashCommandBuilder} = require('@discordjs/builders');
+const wait = require('util').promisify(setTimeout);
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -9,6 +10,6 @@ module.exports = {
                 .setDescription('The input to echo back')
                 .setRequired(true)),
     async execute(interaction){
-        await interaction.reply('Pong!');
+        await interaction.reply({content: 'Pong!', ephemeral: true});
     },
 };
