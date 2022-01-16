@@ -17,7 +17,7 @@ module.exports = {
         //     option.setName('input')
         //         .setDescription('The input to echo back')
         //         .setRequired(true)),
-    async execute(interaction){
+    async execute(client, interaction){
         const string = interaction.options.getString('input');
         const integer = interaction.options.getInteger('int');
         const number = interaction.options.getNumber('num');

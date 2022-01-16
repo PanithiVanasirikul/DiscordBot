@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { CommandInteraction } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,12 +9,14 @@ module.exports = {
 		subcommand
 			.setName('user')
 			.setDescription('Info about a user')
-			.addUserOption(option => option.setName('target').setDescription('The user')))
-	.addSubcommand(subcommand =>
-		subcommand
-			.setName('server')
-			.setDescription('Info about the server')),
-    async execute(interaction){
-                    await interaction.reply('play');
+			.addStringOption(option => option.setName('1').setDescription('The user'))),
+	// .addSubcommand(subcommand =>
+	// 	subcommand
+	// 		.setName('server')
+	// 		.setDescription('Info about the server')
+    //         .addStringOption(option => option.setName('2').setDescription('The user'))),
+    async execute(client, interaction){
+        const string = interaction.options.getString('1')
+        await interaction.reply(string);
     },
 };           
